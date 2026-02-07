@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: note-keeper
+  namespace: noteapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels: note-keeper
+  template:
+    metadata:
+      labels:
+        app: note-keeper
+    spec:
+      containers:
+        - name: app
+          image: briankimathi/note-keeper:
+          ports:
+            - containerPort: 8080
+

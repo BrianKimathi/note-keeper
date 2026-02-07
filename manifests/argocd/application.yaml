@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: note-keeper
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/BrianKimathi/note-keeper.git
+    targetRevision: main
+    path: manifests/deployment
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: noteapp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
