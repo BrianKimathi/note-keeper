@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: note-keeper
+
+datasource:
+  url:
