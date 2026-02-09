@@ -6,7 +6,8 @@ metadata:
 spec:
   replicas: 2
   selector:
-    matchLabels: note-keeper
+    matchLabels:
+      app: note-keeper
   template:
     metadata:
       labels:
@@ -14,7 +15,10 @@ spec:
     spec:
       containers:
         - name: app
-          image: briankimathi/note-keeper:
+          image: briankimathi/note-keeper:1.0
           ports:
-            - containerPort: 8080
+            - containerPort: 8081
+          envFrom:
+            - secretRef:
+                name: noteapp-secret
 
