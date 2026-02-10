@@ -2,5 +2,32 @@ spring:
   application:
     name: note-keeper
 
-datasource:
-  url:
+    datasource:
+      url: mongodb://mongodb.database.svc.cluster.local:27017/note_keeper
+      username: mongouser
+      password: Mongo1234
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+
+jwt:
+  secret: d14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f
+  expiration: 604800000
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+server:
+  port: 8081
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: he
+
