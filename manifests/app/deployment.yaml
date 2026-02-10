@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: briankimathi/note-keeper:1.0
+          image: briankimathi/note-keeper:007e6044b511659169567d27f1caa43f8e5e6518
           ports:
             - containerPort: 8081
           envFrom:
